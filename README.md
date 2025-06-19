@@ -7,8 +7,14 @@ An AI-powered web application that allows users to upload documents and interact
 ## 📁 Project Structure
 
 AI-QA-Agent/
-├── backend/ # FastAPI app with Gemini + LlamaIndex integration
-├── frontend/ # Angular standalone UI (no AppModule)
+
+
+├── backend/ 
+
+
+├── frontend/ 
+
+
 └── README.md # You're here
 
 
@@ -41,16 +47,17 @@ echo "GEMINI_API_KEY=your-gemini-api-key-here" > .env
 
 # Start the backend server
 uvicorn app.main:app --reload
-
+```
 📡 API runs at: http://localhost:8000
 
 ✅ Frontend Setup (Angular Standalone App)
 Requirements: Node.js (v18+), Angular CLI
 
+```bash
 cd frontend
 npm install
 ng serve
-
+```
 🌐 UI runs at: http://localhost:4200
 
 🔐 Environment Variables
@@ -70,9 +77,6 @@ AI Engine	Gemini Pro (Google Generative AI)
 NLP Toolkit	LlamaIndex + HuggingFace Embeddings
 Uploads	FileReader + Llama Parsers
 Session Mgmt	session_id-based Q&A isolation
-
-📷 Screenshots
-Coming soon: UI previews of upload, summary, Q&A flow
 
 👨‍💻 Developer Notes
 Files are uploaded into backend/app/uploads/
