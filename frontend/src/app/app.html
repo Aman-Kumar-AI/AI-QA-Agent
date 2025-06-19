@@ -1,0 +1,32 @@
+<!-- src/app/app.html -->
+<div class="container">
+  <div class="glass">
+  <h1 style="margin-top: -10px;"> AI Document Q&A</h1>
+
+  <div *ngIf="!sessionId">
+    <input type="file" (change)="onFileSelected($event)" />
+      <div style="display: flex; justify-content: center; align-items: center; margin-bottom:50px ;"><div *ngIf="uploading" class="loader"><span class="loader"></span></div></div>
+    
+    <button class="btn" (click)="uploadFile()" [disabled]="!selectedFile || uploading">Upload</button>
+  </div>
+
+  <div  *ngIf="sessionId">
+    <h3>File Name : {{ filename }}</h3>
+    <h4>Document Summary:</h4>
+    <p class="summary">{{ fileSummary }}</p>
+
+    <div class="query-box">
+      <textarea [(ngModel)]="question" placeholder="Ask a question..." rows="3"></textarea>
+      <button class="btn" (click)="ask()" [disabled]="loading || !question">Ask</button>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; padding-bottom:10px ;">
+    <div *ngIf="loading" class="loader"><span class="loader"></span></div>
+    <div class="answer" *ngIf="answer">
+      <strong>Answer:</strong> {{ answer }}
+    </div>
+    </div>
+
+    <button class="reset" (click)="reset()">Upload another file</button>
+  </div>
+  </div>
+</div>
