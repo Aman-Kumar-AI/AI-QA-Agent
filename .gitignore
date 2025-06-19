@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+env/
+.venv/
+.env
+
+# Node/Angular
+node_modules/
+dist/
+.angular/
+.env.local
+.env.*.local
+
+# VSCode
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
